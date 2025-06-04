@@ -14,5 +14,6 @@ WORKDIR /app
 EXPOSE $PORT
 
 # Run the ThetaData Terminal with your credentials
-ENTRYPOINT ["java", "-Xmx2g", "-Xms512m", "-jar", "/app/ThetaTerminal.jar"]
+# Force all output to stdout/stderr for Railway logging
+ENTRYPOINT ["java", "-Xmx2g", "-Xms512m", "-Dfile.encoding=UTF-8", "-Dconsole.encoding=UTF-8", "-jar", "/app/ThetaTerminal.jar"]
 CMD ["me@jerrodtuck.com", "2;8SB*Y@Pq7U*V~~j'nD"] 
