@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  thetabandit-terminal:
+    build: .
+    ports:
+      - "25510:25510"
+    environment:
+      - PORT=25510
+      # Your ThetaData credentials
+      - THETA_USERNAME=me@jerrodtuck.com
+      - THETA_PASSWORD=2;8SB*Y@Pq7U*V~~j'nD
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:25510/v2/system/status || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s 

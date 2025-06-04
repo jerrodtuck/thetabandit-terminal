@@ -1,0 +1,18 @@
+# Use Google Distroless Java 21 image for production
+FROM gcr.io/distroless/java21-debian12:latest
+
+# Set environment variables
+ENV PORT=25510
+
+# Copy the ThetaData Terminal JAR file
+COPY ThetaTerminal.jar /app/ThetaTerminal.jar
+
+# Set working directory
+WORKDIR /app
+
+# Expose the default ThetaData Terminal port
+EXPOSE $PORT
+
+# Run the ThetaData Terminal with your credentials
+ENTRYPOINT ["java", "-Xmx512m", "-Xms256m", "-jar", "/app/ThetaTerminal.jar"]
+CMD ["me@jerrodtuck.com", "2;8SB*Y@Pq7U*V~~j'nD"] 
