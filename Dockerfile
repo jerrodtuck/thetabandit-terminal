@@ -14,5 +14,5 @@ WORKDIR /app
 EXPOSE $PORT
 
 # Run the ThetaData Terminal with your credentials
-ENTRYPOINT ["java", "-Xmx512m", "-Xms256m", "-jar", "/app/ThetaTerminal.jar"]
+ENTRYPOINT ["java", "-Xmx2g", "-Xms512m", "-jar", "/app/ThetaTerminal.jar"]
 CMD ["me@jerrodtuck.com", "2;8SB*Y@Pq7U*V~~j'nD"] 
