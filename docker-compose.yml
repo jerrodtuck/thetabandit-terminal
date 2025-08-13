@@ -9,7 +9,7 @@ services:
       - PORT=25510
       # Your ThetaData credentials
       - THETA_USERNAME=me@jerrodtuck.com
-      - THETA_PASSWORD=2;8SB*Y@Pq7U*V~~j'nD
+      - THETA_PASSWORD=
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:25510/v2/system/status || exit 1"]
